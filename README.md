@@ -1,183 +1,245 @@
-# Calculator App
+# 🧮 Calculator App
 
-A Python-based calculator application with both GUI and console interfaces, built using Tkinter and following MVC (Model-View-Controller) architecture pattern.
+<div align="center">
 
-## 📋 Features
+A feature-rich Python calculator application with dual interfaces - a modern GUI and a powerful console mode, built using the MVC architecture pattern.
 
-### Basic Operations
-- ✅ Addition (+)
-- ✅ Subtraction (-)
-- ✅ Multiplication (*)
-- ✅ Division (/)
+[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Tkinter](https://img.shields.io/badge/GUI-Tkinter-orange.svg)](https://docs.python.org/3/library/tkinter.html)
 
-### Advanced Operations
-- 🔢 Square Root (√)
-- 📊 Percentage (%)
-- 💾 Memory Functions (M+, M-, Memory Store/Recall)
+[Features](#-features) • [Installation](#-getting-started) • [Usage](#-usage) • [Architecture](#-architecture) • [Contributing](#-contributing)
 
-### Interface Options
-- 🖥️ **GUI Interface**: Modern Tkinter-based calculator with button layout
-- 💻 **Console Interface**: Command-line calculator for quick calculations
+</div>
 
-## 🏗️ Project Structure
+---
+
+## ✨ Features
+
+### 🔢 Basic Operations
+- ➕ **Addition** - Sum multiple numbers
+- ➖ **Subtraction** - Calculate differences
+- ✖️ **Multiplication** - Multiply values
+- ➗ **Division** - Divide with zero-protection
+
+### 🚀 Advanced Operations
+- √ **Square Root** - Calculate square roots instantly
+- 📊 **Percentage** - Quick percentage calculations
+- 💾 **Memory Functions** - Store and recall values
+  - `M+` Add to memory
+  - `M-` Subtract from memory
+  - Memory Store/Recall functionality
+
+### 🎨 Dual Interface
+- 🖥️ **GUI Mode** - Beautiful Tkinter-based interface with intuitive button layout
+- 💻 **Console Mode** - Fast command-line interface for power users
+
+## 📁 Project Structure
 
 ```
 Calculator/
-├── app.py                    # Main application entry point
-├── Calculator.py             # Console-based calculator implementation
-├── README.md                 # This file
-└── src/
+├── 📄 app.py                    # Main application entry point (GUI)
+├── 📄 Calculator.py             # Console-based calculator
+├── 📖 README.md                 # Project documentation
+└── 📁 src/
     ├── __init__.py
-    ├── controller/
+    ├── 🎮 controller/
     │   ├── __init__.py
-    │   └── calc_controller.py # Controller logic (MVC pattern)
-    ├── model/
+    │   └── calc_controller.py   # Controller logic (MVC)
+    ├── 🧠 model/
     │   ├── __init__.py
-    │   ├── simple_calc.py     # Basic arithmetic operations
-    │   └── special_calc.py    # Advanced operations & memory functions
-    └── view/
+    │   ├── simple_calc.py       # Core arithmetic operations
+    │   └── special_calc.py      # Advanced operations & memory
+    └── 🎨 view/
         ├── __init__.py
-        └── Mainwindow.py      # GUI implementation using Tkinter
+        └── Mainwindow.py        # Tkinter GUI implementation
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.x
-- Tkinter (usually comes pre-installed with Python)
+
+- **Python 3.x** or higher
+- **Tkinter** (included with standard Python installation)
+
+> 💡 **No external dependencies required!** Everything uses Python's standard library.
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Devikrishna545/Calculator.git
-cd Calculator
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Devikrishna545/Calculator.git
+   cd Calculator
+   ```
 
-2. No additional dependencies required! The calculator uses only Python standard library.
+2. **Verify Python installation**
+   ```bash
+   python --version  # Should show Python 3.x
+   ```
 
-### Running the Application
+3. **You're ready to go!** 🎉
 
-#### GUI Calculator (Recommended)
+### 🏃 Running the Application
+
+#### GUI Calculator (Recommended for most users)
 ```bash
 python app.py
 ```
 
-#### Console Calculator
+#### Console Calculator (For command-line enthusiasts)
 ```bash
 python Calculator.py
 ```
 
-## 💡 Usage
+## 💡 Usage Guide
 
-### GUI Interface
-1. Launch the GUI calculator using `python app.py`
-2. Use the on-screen buttons to input numbers and operations
-3. Press `=` to calculate results
-4. Use `C` to clear the display
-5. Memory functions:
-   - `M+`: Add current value to memory
-   - `M-`: Subtract current value from memory
+### 🖥️ GUI Interface
 
-### Console Interface
-1. Run `python Calculator.py`
-2. Enter the first number
-3. Choose an operator: `+`, `-`, `*`, `/`, `sqt` (square root), `%` (percentage)
-4. For basic operations, specify how many numbers to operate on
-5. Enter additional numbers as prompted
-6. Press `=` to get the result
+1. **Launch** the calculator: `python app.py`
+2. **Click** number buttons to input values
+3. **Select** an operation (+, -, ×, ÷, √, %)
+4. **Press** `=` to see the result
+5. **Clear** display with the `C` button
+
+**Memory Operations:**
+- `M+` - Add current display value to memory
+- `M-` - Subtract current display value from memory
+- `MR` - Recall stored memory value
+- `MC` - Clear memory
+
+### 💻 Console Interface
+
+1. **Run** the console app: `python Calculator.py`
+2. **Enter** your first number
+3. **Choose** an operator:
+   - `+` Addition
+   - `-` Subtraction
+   - `*` Multiplication
+   - `/` Division
+   - `sqt` Square root
+   - `%` Percentage
+4. **Specify** how many numbers to calculate (for basic operations)
+5. **Enter** additional numbers as prompted
+6. **Press** `=` to display the result
 
 ## 🏛️ Architecture
 
-The project follows the **MVC (Model-View-Controller)** design pattern:
+This project implements the **Model-View-Controller (MVC)** design pattern for clean separation of concerns:
 
-- **Model** (`src/model/`): Contains business logic
-  - `SimpleCalculator`: Basic arithmetic operations
-  - `SpecialCalculator`: Advanced operations and memory management
+### 📊 Component Breakdown
 
-- **View** (`src/view/`): User interface components
-  - `Mainwindow.py`: Tkinter-based GUI implementation
+| Component | Location | Responsibility |
+|-----------|----------|----------------|
+| **Model** | `src/model/` | Business logic and calculations |
+| **View** | `src/view/` | User interface rendering |
+| **Controller** | `src/controller/` | Coordinates Model and View |
 
-- **Controller** (`src/controller/`): Manages communication between Model and View
-  - `CalcController`: Coordinates operations between model and view
+#### 🧠 Model Classes
 
-## 🔧 Technical Details
-
-### Classes Overview
-
-#### SimpleCalculator
+**`SimpleCalculator`** - Basic Operations
 ```python
-- add(a, b): Addition operation
-- sub(a, b): Subtraction operation  
-- mul(a, b): Multiplication operation
-- div(a, b): Division operation (with zero-division protection)
+add(a, b)    # Addition
+sub(a, b)    # Subtraction
+mul(a, b)    # Multiplication
+div(a, b)    # Division with zero-check
 ```
 
-#### SpecialCalculator
+**`SpecialCalculator`** - Advanced Features
 ```python
-- sqrt(a): Square root calculation
-- perct(a): Percentage calculation
-- memory_store(c): Store value in memory
-- mem_recall(): Recall stored memory value
-- mem_add(a): Add value to memory
-- mem_sub(a): Subtract value from memory
+sqrt(a)           # Square root calculation
+perct(a)          # Percentage calculation
+memory_store(c)   # Store value in memory
+mem_recall()      # Retrieve memory value
+mem_add(a)        # Add to memory
+mem_sub(a)        # Subtract from memory
 ```
 
-## 🎯 Example Usage
+## 📚 Examples
 
-### Basic Calculation
-```
-Input: 15 + 25
-Output: 40
-
-Input: 100 - 30
-Output: 70
-
-Input: 8 * 7
-Output: 56
-
-Input: 84 / 12
-Output: 7.0
+### Basic Calculations
+```python
+15 + 25 = 40
+100 - 30 = 70
+8 × 7 = 56
+84 ÷ 12 = 7.0
 ```
 
 ### Advanced Operations
-```
-Square Root of 16: 4.0
-25% of 200: 50.0
+```python
+√16 = 4.0
+25% of 200 = 50.0
 ```
 
-## 🐛 Known Issues
-
-- Console interface has some incomplete functionality in multi-number operations
-- GUI calculator button event handling could be improved
-- Error handling could be enhanced for edge cases
+### Memory Usage
+```python
+1. Calculate: 50 + 50 = 100
+2. Press M+ (stores 100)
+3. Calculate: 25 × 2 = 50
+4. Press MR (recalls 100)
+5. Add recalled value to current
+```
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! Here's how you can help:
 
-## 📝 Future Enhancements
+1. **Fork** the repository
+2. **Create** a feature branch
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Commit** your changes
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+4. **Push** to the branch
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open** a Pull Request
 
-- [ ] Scientific calculator functions (sin, cos, tan, log, etc.)
-- [ ] History/previous calculations display
-- [ ] Keyboard input support for GUI
-- [ ] Unit tests implementation
-- [ ] Error handling improvements
-- [ ] Themes and customization options
+### 🐛 Found a Bug?
+Please [open an issue](https://github.com/Devikrishna545/Calculator/issues) with details about the problem.
 
-## 📜 License
+## 🎯 Future Roadmap
 
-This project is open source and available under the [MIT License](LICENSE).
+- [ ] 🔬 Scientific functions (sin, cos, tan, log, exp)
+- [ ] 📜 Calculation history viewer
+- [ ] ⌨️ Keyboard input support for GUI
+- [ ] 🧪 Comprehensive unit tests
+- [ ] 🎨 Theme customization (Dark mode, Light mode)
+- [ ] 📊 Graphing capabilities
+- [ ] 🌐 Multi-language support
+- [ ] 💾 Export calculation history
+
+## ⚠️ Known Limitations
+
+- Console interface multi-number operations need refinement
+- Enhanced error messages for edge cases in development
+- GUI keyboard shortcuts not yet implemented
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
 **Devikrishna545**
-- GitHub: [@Devikrishna545](https://github.com/Devikrishna545)
+- 🐙 GitHub: [@Devikrishna545](https://github.com/Devikrishna545)
+- 📧 Feel free to reach out for questions or suggestions!
+
+## 🙏 Acknowledgments
+
+- Built with Python's powerful standard library
+- GUI powered by Tkinter
+- Inspired by classic calculator designs
 
 ---
 
-⭐ If you found this project helpful, please give it a star!
+<div align="center">
+
+**⭐ If you found this project useful, please consider giving it a star!**
+
+Made with ❤️ by Devikrishna545
+
+</div>
